@@ -1,0 +1,19 @@
+-lib thx.core
+-lib hx-http-server
+-lib hhp
+-lib haxe-files
+-lib haxe-concurrent
+-lib safety
+
+-cp src
+--macro hhp.Hhp.basePath('src/app/templates/')
+--macro build.macro.Build.clean()
+--macro build.macro.Build.generateStyles()
+--macro build.macro.Build.copyVendor()
+--macro build.macro.Build.copyAssets()
+-main Main
+--hl bin/server.hl
+-dce full
+-D analyzer-optimize
+-D no-deprecation-warnings
+-D message.reporting=pretty

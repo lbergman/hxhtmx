@@ -1,0 +1,4 @@
+# @install: lix --silent download "haxelib:/tink_tcp#0.1.1" into tink_tcp/0.1.1/haxelib
+-lib tink_io
+-cp ${HAXE_LIBCACHE}/tink_tcp/0.1.1/haxelib/src
+-D tink_tcp=0.1.1

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../watch"
+		}
+	],
+	"settings": {
+		"editor.tabSize": 2
+	}
+}

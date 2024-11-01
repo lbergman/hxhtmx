@@ -1,0 +1,25 @@
+{
+	"name": "app",
+	"version": "1.0.0",
+	"scripts": {
+		"postinstall": "lix download",
+		"task": "bun run build/task.ts",
+		"dev": "haxe build.hxml -debug -lib watch -D watch.connect -D watch.port=6060 -D watch.excludeRoot -D watch.extensions='hx,html' -D watch.run='haxe build.hxml && hl bin/server.hl'",
+		"build": "haxe build.hxml",
+		"start": "hl bin/server.hl",
+		"reset": "rm -rf node_modules && rm bun.lockb && bun pm cache rm && bun i",
+		"test": "bun test"
+	},
+	"dependencies": {
+		"@types/bun": "^1.1.11",
+		"@types/react": "^18.3.11",
+		"htmx.org": "^2.0.3",
+		"lix": "^15.12.4",
+		"mongodb": "^6.10.0",
+		"tailwindcss": "^3.4.14",
+		"tailwindcss-animated": "^1.1.2"
+	},
+	"devDependencies": {
+		"bun-types": "^1.1.33"
+	}
+}

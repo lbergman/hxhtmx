@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../watch"
+		},
+		{
+			"path": "../webtest2"
+		},
+		{
+			"path": "../webtest"
+		}
+	],
+	"settings": {}
+}

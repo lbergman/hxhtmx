@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="h-full bg-gray-900">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="/public/styles.css" rel="stylesheet" />
+	<script src="/public/htmx.org/htmx.min.js"></script>
+</head>
+
+<body class="h-full">
+	<div class="min-h-full">
+		<nav class="bg-gray-800">
+			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div class="flex h-16 items-center justify-between">
+					<div class="flex items-center ">
+						<div class="flex-shrink-0">
+							<img class="h-8 w-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=orange&shade=500"></img>
+						</div>
+						<div hx-get="/menu?cat=home" hx-target="#menu" hx-swap="innerHTML" hx-trigger="click"
+							class="text-2xl px-4 text-white">
+							<h1 class="text-nowrap">My Page</h1>
+						</div>
+						<div id="menu" class="block">
+							<?=this.menu ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div id="content" hx-history-elt>
+		</div>
+	</div>
+</body>
+
+</html>
