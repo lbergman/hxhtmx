@@ -1,4 +1,35 @@
 <div hx-get="/products/sidebar?cat=2" hx-push-url="/products?cat=2" hx-target="#productCategories" hx-trigger="load"
-	hx-swap="innerHTML" class="animate-fade text-2xl text-white">
-	<h1>Amplifiers</h1>
+	hx-swap="innerHTML show:window:top" class="animate-fade text-2xl text-white">
+	<header class="text-center p-4 bg-gray-800 bg-opacity-50 rounded-xl shadow-xl">
+		<h1 class="text-xl font-bold text-blue-400 mb-2">Smart Home Devices</h1>
+		<p class="text-sm text-gray-300 max-w-xl mx-auto">Enhance your home with our range of smart devices designed for
+			convenience, security, and seamless connectivity.</p>
+	</header>
+
+	<!-- Product List Section -->
+	<section class="p-4 container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		<!-- Product 1: Smart Speaker -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/smarthome_echox.webp" alt="Smart Speaker" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">EchoX Speaker</h2>
+			<p class="text-sm text-gray-300">This voice-controlled smart speaker offers high-quality sound and integrates
+				seamlessly with other smart devices in your home.</p>
+		</div>
+
+		<!-- Product 2: Smart Thermostat -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/smarthome_thermopro.webp" alt="Smart Thermostat" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">ThermoPro</h2>
+			<p class="text-sm text-gray-300">Control your home’s temperature with ease. This thermostat adapts to your
+				lifestyle, helping you save energy and stay comfortable.</p>
+		</div>
+
+		<!-- Product 3: Smart Lighting System -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/smarthome_lightsync.webp" alt="Smart Lighting System" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">LightSync</h2>
+			<p class="text-sm text-gray-300">Customize your lighting with this smart system, which adjusts to your schedule
+				and preferences, creating the perfect ambiance.</p>
+		</div>
+	</section>
 </div>

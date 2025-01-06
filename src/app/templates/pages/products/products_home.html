@@ -1,17 +1,30 @@
-<div class="animate-fade-in text-2xl text-white">
-	<h1>Products</h1>
-</div>
-<div class="animate-fade text-white text-sm py-6">
-	<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id risus nec diam tincidunt tincidunt. Quisque
-		utornare mauris. Aliquam bibendum, eros lobortis eleifend consectetur, libero turpis pulvinar mi, at tincidunt
-		tellusenim volutpat metus.</span>
-	<br>
-	<br>
-	<span>Nulla placerat tellus sit amet justo tincidunt feugiat. Nam eleifend urna ac faucibus
-		faucibus.Pellentesque quis dictum dolor. Nam a vestibulum turpis, sit amet lobortis ex. Proin luctus lorem orci, ut
-		ultricesfelis molestie in. In eu tempor sapien, eget pharetra enim.</span>
-	<br>
-	<br>
-	<span>Class aptent taciti sociosqu ad litora torquent
-		perconubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus.</span>
+<div id="home" class="px-4 text-center text-sm">
+	<h2 class="text-xl font-semibold text-blue-400 mb-4">Featured Products</h2>
+	<p class="text-gray-300 mb-10">Our top picks for this month showcase the latest in technology, from high-performance
+		laptops to the smartest home devices.</p>
+	<div class="flex flex-wrap justify-center space-x-4 space-y-4">
+		<div hx-get="/products?cat=0" hx-target="#productContent" hx-swap="innerHTML show:window:top"
+			hx-push-url="/products?cat=0" class="cursor-pointer max-w-xs p-4 bg-gray-800 bg-opacity-50 rounded-xl shadow-xl">
+			<img src="./public/img/laptop.webp" alt="High-Performance Laptop" class="rounded-lg mb-4">
+			<h3 class="text-xl font-bold">ZenPro Ultra Laptop</h3>
+			<p class="text-gray-300">The ZenPro Ultra brings you power and portability with an ultra-fast processor and
+				vivid
+				display, perfect for work and play.</p>
+		</div>
+		<div hx-get="/products?cat=1" hx-target="#productContent" hx-swap="innerHTML" hx-push-url="/products?cat=1"
+			class="cursor-pointer max-w-xs p-4 bg-gray-800 bg-opacity-50 rounded-xl shadow-xl">
+			<img src="./public/img/phone.webp" alt="Next-Gen Smartphone" class="rounded-lg mb-4">
+			<h3 class="text-xl font-bold">X-Force Smartphone</h3>
+			<p class="text-gray-300">Stay connected with the X-Force, featuring a stunning camera, a fast processor, and a
+				sleek design that fits comfortably in your hand.</p>
+		</div>
+		<div hx-get="/products?cat=2" hx-target="#productContent" hx-swap="innerHTML" hx-push-url="/products?cat=2"
+			class="cursor-pointer max-w-xs p-4 bg-gray-800 bg-opacity-50 rounded-xl shadow-xl">
+			<img src="./public/img/smart_home_device.webp" alt="Smart Home Device" class="rounded-lg mb-4">
+			<h3 class="text-xl font-bold">HomeHub Pro</h3>
+			<p class="text-gray-300">Take control of your home with HomeHub Pro, a versatile device that integrates with
+				other
+				smart home devices for seamless management.</p>
+		</div>
+	</div>
 </div>

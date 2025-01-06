@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.menu-selected {
+		@apply rounded-md px-3 py-2 text-sm font-medium bg-gray-900 text-white text-nowrap;
+	}
+
+	.menu-deselected {
+		@apply rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white text-nowrap;
+	}
+}

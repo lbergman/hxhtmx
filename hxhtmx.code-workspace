@@ -5,9 +5,34 @@
 		},
 		{
 			"path": "../watch"
+		},
+		{
+			"path": "../tools"
+		},
+		{
+			"path": "../hashlink"
 		}
 	],
 	"settings": {
-		"editor.tabSize": 2
+		"[haxe]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "nadako.vshaxe"
+		},
+		"haxe.executable": "auto",
+		"haxe.configurations": [
+			[
+				"build.hxml"
+			],
+		],
+		"haxe.diagnosticsPathFilter": ".*?",
+		"haxe.renameSourceFolders": [
+			"src",
+			"test"
+		],
+		"haxe.enableDiagnostics": true,
+		"haxe.enableCompilationServer": true,
+		"haxe.enableServerView": true,
+		"haxe.enableCodeLens": true,
+		"haxe.displayPort": 6060
 	}
 }

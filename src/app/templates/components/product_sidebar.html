@@ -1,10 +1,10 @@
-<div role="tablist" class="tab-list">
+<div role="tablist" class="tab-list h-full bg-gray-700 bg-opacity-20">
 	<?hhp 
     for (i in 0...this.categories.length) {
         final o = this.categories[i];
-        final selectedStyle = o.id == this.category ? 'bg-gray-700' : 'hover:bg-gray-800';
+        final selectedStyle = o.id == this.category ? 'bg-gray-700 bg-opacity-70' : 'hover:bg-gray-700 hover:bg-opacity-40';
         trace('this.category ${this.category} id:${o.id}');
-        this.echo('<li role="tab" hx-get="/products?cat=${i}" hx-target="#productContent" hx-swap="innerHTML" hx-push-url="/products?cat=${i}" class="${selectedStyle} flex justify-between max-w-64 gap-x-4 py-1 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600">
+        this.echo('<li role="tab" hx-get="/products?cat=${i}" hx-target="#productContent" hx-swap="innerHTML" hx-push-url="/products?cat=${i}" class="${selectedStyle} cursor-pointer flex justify-between max-w-64 space-y-4 py-1 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600">
                 <div class="flex min-w-0 gap-x-4 items-center">
                     <img class="h-12 w-12 flex-none rounded-xl bg-gray-50" src=${o.image} alt="" />
                     <div class="min-w-0 flex-auto">

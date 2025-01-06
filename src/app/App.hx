@@ -2,7 +2,7 @@ package app;
 
 import app.components.ProductSidebar;
 import app.pages.Aboutus;
-import app.pages.Downloads;
+import app.pages.Contact;
 import app.pages.Home;
 import app.pages.Products;
 import app.pages.Technology;
@@ -18,7 +18,7 @@ class App {
 		http.blocking = false;
 		final goHome = (req:HTTPRequest) -> {
 			req.mime = 'text/html';
-			if (req.param.header('HX-Request') != null) {
+			if (isHxReq(req)) {
 				// If hx request just send fragment
 				req.send(hhp.Hhp.render('./pages/home.html'));
 			} else {
@@ -44,12 +44,8 @@ class App {
 		});
 
 		http.route.addRoute('/products/home', req -> {
-			if(isHxReq(req)) {
-				req.send(hhp.Hhp.render('./pages/products/products_home.html'));
-			} else {
-				final tpl = new Products();
-				req.send(tpl.execute());
-			}
+			req.send(hhp.Hhp.render('./pages/products/products_home.html'));
+
 			true;
 		});
 		var currCat:Null<Int> = null;
@@ -57,10 +53,10 @@ class App {
 		http.route.addRoute('/products', req -> {
 			req.mime = 'text/html';
 			final category = Std.parseInt(req.param.getFields().get('cat'));
-		trace('req.param.getFields(): ${req.param.getFields()}');
+			trace('req.param.getFields(): ${req.param.getFields()}');
 			if (isHxReq(req)) {
-				//final categoryData = ProductCategories.get().find(c -> c.id == category);
-				//trace('category:$category categoryData: ${categoryData}');
+				// final categoryData = ProductCategories.get().find(c -> c.id == category);
+				// trace('category:$category categoryData: ${categoryData}');
 				req.send(switch category {
 					case 0: hhp.Hhp.render('./pages/products/category_0.html');
 					case 1: hhp.Hhp.render('./pages/products/category_1.html');
@@ -81,40 +77,13 @@ class App {
 
 			true;
 		});
-		http.route.addRoute('/products', req -> {
-			req.mime = 'text/html';
-			final category = Std.parseInt(req.param.getFields().get('cat'));
-		trace('req.param.getFields(): ${req.param.getFields()}');
-			if (isHxReq(req)) {
-				//final categoryData = ProductCategories.get().find(c -> c.id == category);
-				//trace('category:$category categoryData: ${categoryData}');
-				req.send(switch category {
-					case 0: hhp.Hhp.render('./pages/products/category_0.html');
-					case 1: hhp.Hhp.render('./pages/products/category_1.html');
-					case 2: hhp.Hhp.render('./pages/products/category_2.html');
-					default: hhp.Hhp.render('pages/products.html', {
-							category: currCat,
-						});
-				});
-				currCat = null;
-			} else {
-				trace('category: ${category}');
-
-				final tpl = new Products();
-				tpl.category = category;
-				req.send(tpl.execute());
-				currCat = category;
-			}
-
-			true;
-		});
-		// Downloads page
-		http.route.addRoute('/downloads', req -> {
+		// Contact page
+		http.route.addRoute('/contact', req -> {
 			req.mime = 'text/html';
 			if (isHxReq(req)) {
-				req.send(hhp.Hhp.render('./pages/downloads.html'));
+				req.send(hhp.Hhp.render('./pages/contact.html'));
 			} else {
-				final tpl = new Downloads();
+				final tpl = new Contact();
 				req.send(tpl.execute());
 			}
 			true;
@@ -158,7 +127,7 @@ class App {
 			req.send(switch category {
 				case 'products': hhp.Hhp.render('./menu/products.html');
 				case 'technology': hhp.Hhp.render('./menu/technology.html');
-				case 'downloads': hhp.Hhp.render('./menu/downloads.html');
+				case 'contact': hhp.Hhp.render('./menu/contact.html');
 				case 'aboutus': hhp.Hhp.render('./menu/aboutus.html');
 				case _: hhp.Hhp.render('./menu/home.html');
 			});

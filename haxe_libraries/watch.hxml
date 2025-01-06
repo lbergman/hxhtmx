@@ -1,5 +1,5 @@
-# @install: lix --silent download "git:https://github.com/lbergman/watch.git#8212c5459fe6d4c262a01b6ee0902797ab7322aa" into watch/0.0.6/git/8212c5459fe6d4c262a01b6ee0902797ab7322aa
-# @run: haxelib run-dir watch "${HAXE_LIBCACHE}/watch/0.0.6/git/8212c5459fe6d4c262a01b6ee0902797ab7322aa"
--cp ${HAXE_LIBCACHE}/watch/0.0.6/git/8212c5459fe6d4c262a01b6ee0902797ab7322aa/src
+# @install: lix --silent download "haxelib:watch#0.0.6" into watch/0.0.6/
+# @run: haxelib run-dir watch "/workspaces/watch/src"
 -D watch=0.0.6
+-cp /workspaces/watch/src
 --macro watch.Watch.register()

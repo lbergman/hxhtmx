@@ -1,4 +1,36 @@
 <div hx-get="/products/sidebar?cat=0" hx-push-url="/products?cat=0" hx-target="#productCategories" hx-trigger="load"
-	hx-swap="innerHTML" class="animate-fade text-2xl text-white">
-	<h1>DML Speakers</h1>
+	hx-swap="innerHTML show:window:top" class="animate-fade text-sm text-white">
+	<header class="p-4 text-center bg-gray-800 bg-opacity-40 shadow-xl">
+		<h1 class="text-xl font-bold text-blue-400 mb-2">TechNex Laptops</h1>
+		<p class="text-gray-300 max-w-xl mx-auto">Discover our high-performance laptops designed to elevate
+			productivity,
+			enhance creativity, and provide seamless connectivity.</p>
+	</header>
+
+	<section class="py-4 px-4 container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+		<div class="bg-gray-800 bg-opacity-60 rounded-lg shadow-xl p-4">
+			<img src="./public/img/laptop_ultra.webp" alt="ZenPro Ultra" class="rounded-lg mb-4">
+			<h2 class="text-md font-bold text-blue-400 mb-2 shadow-xl">ZenPro Ultra</h2>
+			<p class="text-gray-300 mb-4">A powerhouse for professionals, featuring a fast processor, vivid display, and long
+				battery life. Perfect for multitasking and productivity.</p>
+		</div>
+		<div class="bg-gray-800 bg-opacity-60 rounded-lg shadow-xl p-4">
+			<img src="./public/img/laptop_pixelpro.webp" alt="PixelPro Max" class="rounded-lg mb-4">
+			<h2 class="text-md font-bold text-blue-400 mb-2">PixelPro Max</h2>
+			<p class="text-gray-300">Designed for creators, this laptop has a high-resolution display and a color-accurate
+				screen for photo editing and design work.</p>
+		</div>
+		<div class="bg-gray-800 bg-opacity-60 rounded-lg shadow-xl p-4">
+			<img src="./public/img/laptop_gaming.webp" alt="GamerXtreme" class="rounded-lg mb-4">
+			<h2 class="text-md font-bold text-blue-400 mb-2">GamerXtreme</h2>
+			<p class="text-gray-300">A gaming powerhouse with a fast refresh rate, high-performance graphics card, and
+				enhanced cooling technology.</p>
+		</div>
+		<div class="bg-gray-800 bg-opacity-60 rounded-lg shadow-xl p-4">
+			<img src="./public/img/laptop_lightbook.webp" alt="LightBook" class="rounded-lg mb-4">
+			<h2 class="text-md font-bold text-blue-400 mb-2">LightBook</h2>
+			<p class="text-gray-300">Ultra-thin and lightweight, perfect for on-the-go users needing portability without
+				compromising performance.</p>
+		</div>
+	</section>
 </div>

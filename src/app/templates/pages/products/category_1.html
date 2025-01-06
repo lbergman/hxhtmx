@@ -1,4 +1,52 @@
 <div hx-get="/products/sidebar?cat=1" hx-push-url="/products?cat=1" hx-target="#productCategories" hx-trigger="load"
-	hx-swap="innerHTML" class="animate-fade text-2xl text-white">
-	<h1>Subs</h1>
+	hx-swap="innerHTML show:window:top" class="animate-fade text-2xl text-white">
+	<!-- Header Section -->
+	<header class="text-center p-4">
+		<h1 class="text-xl font-bold text-blue-400 mb-2">Smartphones</h1>
+		<p class="text-sm text-gray-300 max-w-xl mx-auto">Explore the latest in mobile technology with our selection of
+			high-performance smartphones, designed to enhance connectivity, productivity, and entertainment.</p>
+	</header>
+
+	<!-- Product List Section -->
+	<section class="p-4 container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+		<!-- Product 1 -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/phone_xforce12.webp" alt="Smartphone 1" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">X-Force 12</h2>
+			<p class="text-sm text-gray-300">Flagship model with edge-to-edge display, enhanced camera system, and ultra-fast
+				processing for seamless multitasking.</p>
+		</div>
+
+		<!-- Product 2 -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/phone_pixelmaxpro.webp" alt="Smartphone 2" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">PixelMax Pro</h2>
+			<p class="text-sm text-gray-300">Designed for photography enthusiasts with a high-resolution camera, advanced
+				editing features, and vibrant display.</p>
+		</div>
+
+		<!-- Product 3 -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/phone_litewaves.webp" alt="Smartphone 3" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">LiteWave S</h2>
+			<p class="text-sm text-gray-300">Lightweight and compact, featuring long battery life and a bright display that’s
+				perfect for everyday use.</p>
+		</div>
+
+		<!-- Product 4 -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/phone_ecosmartx.webp" alt="Smartphone 4" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">EcoSmart X</h2>
+			<p class="text-sm text-gray-300">Eco-friendly design with energy-saving features and materials, delivering
+				powerful performance with a low carbon footprint.</p>
+		</div>
+
+		<!-- Product 5 -->
+		<div class="bg-gray-800 bg-opacity-50 rounded-lg shadow-xl p-4">
+			<img src="./public/img/phone_visionaryz.webp" alt="Smartphone 5" class="rounded-lg mb-2">
+			<h2 class="text-xl font-bold text-blue-400 mb-1">Visionary Z</h2>
+			<p class="text-sm text-gray-300">Advanced AI integration for optimized performance, immersive display, and smart
+				features for an enhanced user experience.</p>
+		</div>
+	</section>
 </div>

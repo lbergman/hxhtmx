@@ -1,7 +1,8 @@
-<div class="max-w-md shadow-md overflow-hidden md:max-w-2xl">
+<div class="max-w-md shadow-md overflow-hidden md:max-w-4xl">
 	<div class="md:flex">
 		<div class="md:shrink-0 left-0">
-			<aside id="default-sidebar" class="h-48 w-full object-cover md:h-full md:w-48" aria-label="Sidebar">
+			<aside id="default-sidebar" class="h-48 w-full md:fixed left-0 object-cover md:h-full md:w-48 shadow-xl "
+				aria-label="Sidebar">
 				<?hhp 
 					final catStr = this.category != null ? '?cat=${this.category}' : '';
 					this.echo('<div id="productCategories" hx-get="/products/sidebar${catStr}" hx-trigger="load"
@@ -9,14 +10,13 @@
 					?>
 			</aside>
 		</div>
-		<div id="productContent" class="p-4 items-center justify-between">
+		<div id="productContent" class="md:ml-48 p-6 items-center justify-between">
 			<?hhp 
-			final catStr = this.category != null ? '?cat=${this.category}' : null;
-			trace('catStr:$catStr');
-			if(catStr!=null) {
-				this.echo('<div hx-trigger="load" hx-get="/products/home" hx-target="#productContent" hx-swap="innerHTML"></div>');
+			if(this.category == null) {
+				this.echo('<div hx-trigger="load" hx-get="/products/home"  hx-push-url='/products/home' hx-target="#productContent" hx-swap="innerHTML"></div>');
 			} else {
-				this.echo('<div hx-trigger="load" hx-get="/products${catStr}" hx-target="#productContent" hx-swap="innerHTML"></div>');
+				final catStr = '?cat=${this.category}';
+				this.echo('<div hx-trigger="load" hx-get="/products${catStr}" hx-push-url="/products${catStr}"  hx-target="#productContent" hx-swap="innerHTML"></div>');
 			}
 			?>
 		</div>

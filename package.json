@@ -4,10 +4,10 @@
 	"scripts": {
 		"postinstall": "lix download",
 		"task": "bun run build/task.ts",
-		"dev": "haxe build.hxml -debug -lib watch -D watch.connect -D watch.port=6060 -D watch.excludeRoot -D watch.extensions='hx,html' -D watch.run='haxe build.hxml && hl bin/server.hl'",
+		"dev": "haxe build.hxml -debug -lib watch -D watch.connect -D watch.port=6060 -D watch.excludeRoot -D watch.extensions='hx,html' -D watch.run='hl bin/server.hl'",
 		"build": "haxe build.hxml",
 		"start": "hl bin/server.hl",
-		"reset": "rm -rf node_modules && rm bun.lockb && bun pm cache rm && bun i",
+		"reset": "rm -rf node_modules && rm -rf node_modules && rm bun.lockb && bun pm cache rm && bun i",
 		"test": "bun test"
 	},
 	"dependencies": {
@@ -21,5 +21,8 @@
 	},
 	"devDependencies": {
 		"bun-types": "^1.1.33"
-	}
+	},
+	"trustedDependencies": [
+		"lix"
+	]
 }
